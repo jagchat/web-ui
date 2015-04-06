@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //NOTE: Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
+
+        //01-->Any instance (or any JS object) will have "__proto__" (as explained in 01-IntroToInternalPrototype.html)
+        var Product = function(){
+            this.Id = null;
+        };
+        var oProduct = new Product();
+        alert(oProduct.__proto__); //shows "Product {}" (or Product.Prototype)
+        alert(oProduct.__proto__ == Product.prototype); //true ("oProduct.__proto__" contains reference to "Product.prototype")
+
+        //02-->Every "prototype" property is also an object and thus it should have its own "__proto__"
+        alert(Product.prototype.__proto__); //shows "Object {}" (or Object.Prototype), but where is this coming from
+        alert(Function.prototype.__proto__); //shows "Object {}" (or Object.Prototype), but where is this coming from
+
+        //03--> "Object" is a built-in constructor function (and also a function instance!) that creates objects
+        alert(Object); //shows native implementation of Object
+        alert(Object.prototype); //valid - as it is a constructor function, and this is used while creating "Function.prototype"
+        alert(Object.__proto__); //valid - as it is a function instance
+        alert(Object.__proto__ == Function.prototype); //true - the "__proto__" of any function instance defaults to "Function.prototype"
+        alert(Function.prototype.__proto__ == Object.prototype); //true
+
+        //04--> Modifying "Object.prototype" affects everywhere
+        //  as every "prototype" is an instance of "Object.prototype" indirectly
+        Object.prototype.dispMsg = function(){
+            alert("from Object.prototype");
+        };
+
+        Function.prototype.dispMsg();
+        Object.__proto__.dispMsg();
+        Product.prototype.dispMsg();
+        oProduct.dispMsg();
+
+        //05--> Everything boils down to "Object.prototype" finally (and Object.__proto__ is undefined or Empty() or function() or null, depending on browser implementation)
+        //  Product.__proto__           => Function.prototype   =====>  Function.prototype.__proto__    => Object.prototype
+        //  oProduct.__proto__          => Product.prototype    =====>  Product.prototype.__proto__     => Object.prototype
+        //  Object.__proto__            => Function.prototype   =====>  Function.prototype.__proto__    => Object.prototype
+        //  Product.prototype.__proto__                                                                 => Object.prototype
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

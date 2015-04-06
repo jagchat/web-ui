@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript">
-        //01--> A function itself is an object, thus it would have its own "__proto__" definition
+        //NOTE: Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
+
+        //01--> A function itself is an object, thus it would have its own "__proto__" definition (along with its own "prototype" def)
         var Product = function(){
             this.Id = null;
         };
+        alert(Product.prototype); //we already knew this
         alert(Product.__proto__); //cool. But, where does this refer to?
 
-        //02--> "Function" is built-in constructor function.  Any user defined function is an instance of "Function".
+        //02--> "Function" is a built-in constructor function.  Any user defined function is an instance of "Function".
         // "Function.prototype" is the default (or parent) prototype object for all (user defined or instantiated) functions.
         //  When any function is defined, a new instance of "Function" gets created and
         //  all members in "Function.prototype" gets copied to the new function.
+        alert(Function); //shows native implementation of Function
         Function.prototype.alertOnce = function(){ //modify the "Function.prototype"
             alert("from Function.prototype");
         };
@@ -28,11 +32,9 @@
         Product.alertOnce(); //not to be surprised, "prototype" property is dynamic and affects all instances instantaneously
 
         //03-->Summary:
-        //  A function itself is an object (and can also be a construction function to serve as a class to create instances)
-        //  Every function is an instance of "Function" (which is a built-in constructor function and also an object on its own and has its own "property" and "__proto")
-        //  The "__proto__" of any function defaults to "Function.prototype"
-
-        //P.S. Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
+        //  -A function itself is an object (and can also be a construction function to serve as a class to create instances)
+        //  -Every function is an instance of "Function" (which is a built-in constructor function and also an object on its own and has its own "property" and "__proto")
+        //  -The "__proto__" of any function instance defaults to "Function.prototype"
     </script>
 </head>
 <body>

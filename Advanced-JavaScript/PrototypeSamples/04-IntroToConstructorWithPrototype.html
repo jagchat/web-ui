@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //NOTE: Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
+
+        var Product = function(){
+            this.Id = null;
+        };
+        var oProduct = new Product();
+
+        //01-->"constructor" property simply points back to the function that created it
+        alert(oProduct.constructor); //Product constructor function
+        alert(Product.constructor); //"Function" constructor function
+        alert(Function.constructor); //"Function" constructor function!
+        alert(Object.constructor); //"Function" constructor function!
+        alert(Product.prototype.constructor); //Product constructor function
+        alert(oProduct.__proto__.constructor); //Product constructor function
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

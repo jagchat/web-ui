@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript">
+        //NOTE: Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
 
         //01-->Any constructor function will always have a property called "prototype"
         var Product = function(){
@@ -40,13 +41,12 @@
         oProduct.dispMsgFromProductPrototype(); //did not create a new instance, but the new def is immediately available
 
         //05-->Summary:
-        //  A property "prototype" exists for every constructor function
-        //  A property "prototype" does not exist for any instantiated object (by default)
-        //  An instance gets created by copying (or allocating memory for) all members in the constructor function plus all members in the constructor function's own "prototype" property
-        //  Modifying "prototype" property will have instantaneous affect on all its instances (including the old ones)
-        //  A property "__proto__" exists for every object, which refers to the "prototype" property from where the instance copied its members
-
-        //P.S. Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
+        //  -A property "prototype" exists (or gets created) for every constructor function
+        //  -A property "prototype" does not exist for any instantiated object (by default)
+        //  -An instance gets created by copying (or allocating memory for) all members in the constructor function plus all members in the constructor function's own "prototype" property
+        //  -Modifying "prototype" property will have instantaneous affect on all its instances (including the old ones)
+        //  -A property "__proto__" exists for every object, which refers to the "prototype" property from where the instance copied its members
+        //  -"prototype" is the object used to build "__proto__" (and assigned to new instance), when an object is created (using "new").
     </script>
 </head>
 <body>
