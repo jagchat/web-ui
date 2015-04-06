@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+
+        //-->Any constructor function will always have a property called "prototype"
+        var Product = function(){
+            this.Id = null;
+        };
+        alert(Product.prototype); //the default prototype is empty (no members)
+
+        //-->When an instance of "Product" is created, all the members in constructor function and
+        //  all the members in "Product.prototype" will be made available to the new instance
+        Product.prototype.showMsgFromProductPrototype = function(){ //change the "Product.prototype" definition
+            alert("from Product.prototype..Product Id: " + this.Id);
+        };
+        var oProduct = new Product(); //create an instance of "Product"
+        oProduct.Id = "1001"; //assign some properties
+        oProduct.showMsgFromProductPrototype(); //"showMsgFromProductPrototype" is automatically made available to the new instance
+
+        //-->an instance (from a constructor function) will never have a "prototype" property (by default)
+        alert(oProduct.prototype); //results in undefined
+
+        //-->any instance will always have an internal property "__proto__",
+        //  which gives the reference to "prototype" object, from where the instance copied its members.
+        alert(oProduct.__proto__); //gives the reference to "Product.prototype" (may not work in certain IE browsers)
+        alert(oProduct.constructor.prototype) //you can also use "constructor.prototype" instead of "__proto__" (works everywhere)
+        alert(oProduct.__proto__ == Product.prototype); //true
+
+        //-->Summary:
+        //  A property "prototype" exists for every constructor function
+        //  A property "prototype" does not exist for any instantiated object (by default)
+        //  An instance gets created by copying (or allocating memory for) all members in the constructor function plus all members in the constructor function's own "prototype" property
+        //  A property "__proto__" exists for every object, which refers to the "prototype" property from where the instance copied its members
+    </script>
+</head>
+<body>
+
+</body>
+</html>
