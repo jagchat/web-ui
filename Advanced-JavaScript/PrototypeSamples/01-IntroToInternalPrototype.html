@@ -3,15 +3,15 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <script language="JavaScript" type="text/javascript">
+    <script type="text/javascript">
 
-        //-->Any constructor function will always have a property called "prototype"
+        //01-->Any constructor function will always have a property called "prototype"
         var Product = function(){
             this.Id = null;
         };
         alert(Product.prototype); //the default prototype is empty (no members)
 
-        //-->When an instance of "Product" is created, all the members in constructor function and
+        //02-->When an instance of "Product" is created, all the members in constructor function and
         //  all the members in "Product.prototype" will be made available to the new instance
         Product.prototype.showMsgFromProductPrototype = function(){ //change the "Product.prototype" definition
             alert("from Product.prototype..Product Id: " + this.Id);
@@ -20,20 +20,33 @@
         oProduct.Id = "1001"; //assign some properties
         oProduct.showMsgFromProductPrototype(); //"showMsgFromProductPrototype" is automatically made available to the new instance
 
-        //-->an instance (from a constructor function) will never have a "prototype" property (by default)
+        //03-->an instance (from a constructor function) will never have a "prototype" property (by default)
         alert(oProduct.prototype); //results in undefined
 
-        //-->any instance will always have an internal property "__proto__",
+        //04-->any instance will always have an internal property "__proto__",
         //  which gives the reference to "prototype" object, from where the instance copied its members.
         alert(oProduct.__proto__); //gives the reference to "Product.prototype" (may not work in certain IE browsers)
         alert(oProduct.constructor.prototype) //you can also use "constructor.prototype" instead of "__proto__" (works everywhere)
         alert(oProduct.__proto__ == Product.prototype); //true
 
-        //-->Summary:
+        //05-->"prototype" property is dynamic => any modifications to "prototype" object is instantaneously made available to all of its instances
+        Product.prototype.showMsgFromProductPrototype = function(){ //let us further modify the same function
+            alert("changed now..from Product.prototype..Product Id: " + this.Id);
+        };
+        Product.prototype.dispMsgFromProductPrototype = function(){ //you can add new one as well
+            alert("this is disp..from Product.prototype..Product Id: " + this.Id);
+        };
+        oProduct.showMsgFromProductPrototype(); //did not create a new instance, but the new def is immediately available
+        oProduct.dispMsgFromProductPrototype(); //did not create a new instance, but the new def is immediately available
+
+        //05-->Summary:
         //  A property "prototype" exists for every constructor function
         //  A property "prototype" does not exist for any instantiated object (by default)
         //  An instance gets created by copying (or allocating memory for) all members in the constructor function plus all members in the constructor function's own "prototype" property
+        //  Modifying "prototype" property will have instantaneous affect on all its instances (including the old ones)
         //  A property "__proto__" exists for every object, which refers to the "prototype" property from where the instance copied its members
+
+        //P.S. Play using browser's integrated console developer tool to get more information of those properties (rather than using alerts, which may not make sense to understand)
     </script>
 </head>
 <body>
