@@ -13,6 +13,9 @@
         emp["Dept"] = "Accounting";
 
         function displayEmp() {
+			
+			var ResultsDiv = document.getElementById("ResultsDiv");
+			
             for (key in emp) { //for every iteration, get the key
                 var NewDiv = document.createElement("div"); //create a new div for every key/value pair
                 NewDiv.innerHTML = key + ": " + emp[key]; //using key, get the value
