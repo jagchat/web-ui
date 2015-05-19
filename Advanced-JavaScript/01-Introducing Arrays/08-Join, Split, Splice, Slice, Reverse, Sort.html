@@ -59,7 +59,8 @@
 
         function DoSlice1() {
             //var ary2 = ary.slice(2, 5); //extracts elements starting from index 2 to 5-1 (output: 30, 40, "chat")
-            var ary2 = ary.slice(2); //take all elements from index 2
+            //var ary2 = ary.slice(2); //take all elements from index 2
+			var ary2 = ary.slice(); //clones all elements
             DisplayAryResults(ary2);
         }
 
