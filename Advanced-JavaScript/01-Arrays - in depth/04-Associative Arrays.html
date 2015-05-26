@@ -17,7 +17,8 @@
 			var ResultsDiv = document.getElementById("ResultsDiv");
 			
             for (key in emp) { //for every iteration, get the key
-                var NewDiv = document.createElement("div"); //create a new div for every key/value pair
+                //create a new div for every key/value pair
+				var NewDiv = document.createElement("div");				
                 NewDiv.innerHTML = key + ": " + emp[key]; //using key, get the value
                 ResultsDiv.appendChild(NewDiv); //add the div to results
             }

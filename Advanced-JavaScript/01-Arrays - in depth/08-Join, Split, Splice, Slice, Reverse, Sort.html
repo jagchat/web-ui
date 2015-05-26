@@ -22,15 +22,21 @@
 
             //iterate through each element in the array
             for (var i = 0; i < n; i++) {
-                var NewDiv = document.createElement("div"); //create/add a new div to the document
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
                 //set the message to show in newly created div
-                NewDiv.innerHTML = "Index " + i.toString() + ", Item " + (i + 1).toString() + " of " + n.toString() + " is " + pAry[i];
-                AryItems.appendChild(NewDiv); //hook up newly created div as a child to another (parent) div
+                NewDiv.innerHTML = "Index " + i.toString() + 
+					", Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + pAry[i];
+				//hook up newly created div as a child to another (parent) div
+                AryItems.appendChild(NewDiv); 
             }
         }
 
         function DisplayJoinResult() {
-            var str = ary.join(", "); //joins all array elements with the specified separator
+            //joins all array elements with the specified separator
+			var str = ary.join(", "); 
             alert(str);
         }
 
@@ -42,24 +48,35 @@
         }
 
         function DoSplice1() {
-            //ary.splice(0, 1); //removes 1 element starting from index 0
+			////removes 1 element starting from index 0
+            //ary.splice(0, 1); 
 
-            //var removed = ary.splice(1, 2); //removes 2 elements from index 1 and returns those two in the form of ary.
+			////removes 2 elements from index 1 and returns those two in the form of ary.
+            //var removed = ary.splice(1, 2); 
             //alert(removed);
 
-            //ary.splice(1, 2, "Win"); //removes 2 elements from index 1 and adds "Win" at index 1
+			////removes 2 elements from index 1 and adds "Win" at index 1
+            //ary.splice(1, 2, "Win"); 
 
-            //ary.splice(1, 2, "Win", "Dhan"); //removes 2 elements from index 1 and adds "Win" and "Dhan" from index 1
+            ////removes 2 elements from index 1 and adds "Win" and "Dhan" from index 1
+			//ary.splice(1, 2, "Win", "Dhan"); 
 
-            //ary.splice(2, 0, "Win", "Dhan"); //remove 0 elements from index 2 and adds "Win" and "Dhan" from index 2 (nothing but inserting)
+            ////remove 0 elements from index 2 and adds "Win" and "Dhan" from index 2 (nothing but inserting)
+			//ary.splice(2, 0, "Win", "Dhan"); 
 
-            ary.splice(-1, 0, "Win", "Dhan"); //remove 0 elements from last-1 index and inserts "Win" and "Dhan"
+			////remove 0 elements from last-1 index and inserts "Win" and "Dhan"
+            ary.splice(-1, 0, "Win", "Dhan"); 
+			
             DisplayAryResults(ary);
         }
 
         function DoSlice1() {
-            //var ary2 = ary.slice(2, 5); //extracts elements starting from index 2 to 5-1 (output: 30, 40, "chat")
-            //var ary2 = ary.slice(2); //take all elements from index 2
+			////extracts elements starting from index 2 to 5-1 (output: 30, 40, "chat")
+            //var ary2 = ary.slice(2, 5); 
+			
+			////take all elements from index 2
+            //var ary2 = ary.slice(2); 
+			
 			var ary2 = ary.slice(); //clones all elements
             DisplayAryResults(ary2);
         }
@@ -70,7 +87,8 @@
         }
 
         function DoSort() {
-            ary.sort(); //converts everything to string and uses lexicographical order by default
+            //converts everything to string and uses lexicographical order by default
+			ary.sort(); 
             DisplayAryResults(ary);
         }
 

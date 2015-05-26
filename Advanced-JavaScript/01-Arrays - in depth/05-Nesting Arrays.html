@@ -44,15 +44,16 @@
             var ResultsDiv = document.getElementById("ResultsDiv");
 
             for (var i = 0; i < n; i++) { //for every item (or row) in nested array
-
-                var emp = emps[i]; //get the item in nested array (one emp row or one array of Emp values)
+				//get the item in nested array (one emp row or one array of Emp values)
+                var emp = emps[i]; 
                 for (key in emp) {
-                    var NewDiv = document.createElement("div"); //a new div for every key/value pairs
+					//a new div for every key/value pairs
+                    var NewDiv = document.createElement("div"); 
                     NewDiv.innerHTML = key + ": " + emp[key];
                     ResultsDiv.appendChild(NewDiv); //add to results
                 }
-
-                var NewBr = document.createElement("br"); //a break tag to make a diff.
+				//a break tag to make a diff.
+                var NewBr = document.createElement("br"); 
                 ResultsDiv.appendChild(NewBr);
             }
         }

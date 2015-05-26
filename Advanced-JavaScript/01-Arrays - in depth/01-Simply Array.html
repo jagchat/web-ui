@@ -21,10 +21,14 @@
 
             //iterate through each element in the array
             for (var i = 0; i < n; i++) {
-                var NewDiv = document.createElement("div"); //create/add a new div to the document
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
                 //set the message to show in newly created div
-                NewDiv.innerHTML = "Item " + (i + 1).toString() + " of " + n.toString() + " is " + ar1[i];
-                ResultsDiv.appendChild(NewDiv); //hook up newly created div as a child to (parent) div
+                NewDiv.innerHTML = "Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + ar1[i];
+				//hook up newly created div as a child to (parent) div
+                ResultsDiv.appendChild(NewDiv); 
             }
         }
 

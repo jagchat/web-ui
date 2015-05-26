@@ -14,14 +14,16 @@
         emp["Dept"] = "Accounting";
 
         function btn1Click(){
-            alert(emp.length); //gives 0 (string based indexes do not count in length)
+			//gives 0 (string based indexes do not count in length)
+            alert(emp.length); 
         }
 
         var ary1 = [];
         ary1[3] = "something";
 
         function btn2Click(){
-            alert(ary1.length); //gives 4 (if new index is used, it allocates for all previous index automatically)
+			//gives 4 (if new index is used, it allocates for all previous index automatically)
+            alert(ary1.length); 
         }
 
         var ary2 = [];
@@ -29,7 +31,8 @@
         ary2["Name"] = "Some Name";
 
         function btn3Click(){
-            alert(ary2.length); //still gives 4 (string based indexes do not cound in length)
+			//still gives 4 (string based indexes do not cound in length)
+            alert(ary2.length); 
         }
 
 

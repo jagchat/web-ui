@@ -32,11 +32,16 @@
 
             //iterate through each element in the array
             for (var i = 0; i < n; i++) {
-                var NewDiv = document.createElement("div"); //create/add a new div to the document
-                NewDiv.setAttribute("id", "item" + i.toString()); //set id attribute to the newly created div
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
+				//set id attribute to the newly created div
+                NewDiv.setAttribute("id", "item" + i.toString()); 
                 //set the message to show in newly created div
-                NewDiv.innerHTML = "Item " + (i + 1).toString() + " of " + n.toString() + " is " + list[i];
-                ItemsListDiv.appendChild(NewDiv); //hook up newly created div as a child to another (parent) div
+                NewDiv.innerHTML = "Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + list[i];
+				//hook up newly created div as a child to another (parent) div
+                ItemsListDiv.appendChild(NewDiv); 
             }
         }
 
