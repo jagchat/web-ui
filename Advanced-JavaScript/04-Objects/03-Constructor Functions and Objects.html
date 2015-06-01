@@ -37,7 +37,18 @@
             alert(p + ' = ' + oEmp[p]);
         }
 
+		function ShowEmp(o) {
+            //another way of accessing object members using "with" construct
+            with (o) {
+                alert(Empno.toString() + ", " +
+                        Ename + ", " +
+                        Sal.toString() + ", " +
+                        Deptno.toString()
+                );
+            }
+        }
 
+		ShowEmp(oEmp);
     </script>
 </head>
 <body>
