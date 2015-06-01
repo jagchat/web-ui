@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        //Context: Demo (use F12 or developer tools to explore more about "this" in these samples
+
+        function DoProcess() {
+            debugger;
+            alert(this); //current context: global context (window)
+        }
+
+        DoProcess();
+
+        var oEmp = {
+            Empno: 1001,
+            Ename: "Jag",
+            Sal: 3400,
+            getAnnSal: function () {
+                debugger;
+                return this.Sal * 12; //current context: object (oEmp)
+            }
+        };
+
+        alert(oEmp.getAnnSal());
+
+
+        var Emp = function(empno, ename, sal){
+            this.Empno = empno;
+            this.Ename = ename;
+            this.Sal = sal;
+
+            this.getAnnSal = function () {
+                debugger;
+                return this.Sal * 12; //current context: instance of "Emp"
+            }
+        };
+
+        var o = new Emp(1002, "Jag", 2300);
+        alert(o.getAnnSal());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
