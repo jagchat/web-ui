@@ -7,7 +7,7 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NetServer", "NetServer\NetS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpClient", "CSharpClient\CSharpClient.csproj", "{66B164F2-F72F-4AAE-9153-A95A0467C22F}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NetClient", "NetClient\NetClient\NetClient.njsproj", "{4F49739C-D4F2-4066-98C3-2071B5C914C6}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NetClient", "NetClient\NetClient.njsproj", "{4F49739C-D4F2-4066-98C3-2071B5C914C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
