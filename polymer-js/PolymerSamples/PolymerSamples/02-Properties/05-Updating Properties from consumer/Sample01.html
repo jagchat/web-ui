@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="sample-element.html">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <sample-element id="sampleElement1" first-no="10" second-no="20"></sample-element>
+    <hr />
+    Enter First No: <input id="txtFirstNo" type="text" /><br />
+    Enter Second No: <input id="txtSecondNo" type="text" /><br />
+    <button id="btnCalc" onclick="btnCalcClick()">Calculate</button>
+    <script type="text/javascript">
+        function btnCalcClick() {
+            var o = document.getElementById("sampleElement1");
+            var a = document.getElementById("txtFirstNo").value;
+            var b = document.getElementById("txtSecondNo").value;
+            o.firstNo = parseInt(a); //assign value directly to polymer custom object property (not rhough attribute)
+            o.secondNo = parseInt(b);
+
+            ////the above works, but the attribute value will not be reflected as shown below:
+            //alert(o.getAttribute("first-no"));
+        }
+    </script>
+</body>
+</html>

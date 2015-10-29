@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C57E6B8-D685-490A-8390-65299F54052B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolymerSamples</RootNamespace>
+    <AssemblyName>PolymerSamples</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="01-Basics\01-Custom Elements, Registration and Instantiation\Sample.html" />
+    <Content Include="01-Basics\02-Custom Elements %28and registration%29 in separate file\sample-element.html" />
+    <Content Include="01-Basics\02-Custom Elements %28and registration%29 in separate file\Sample02.html" />
+    <Content Include="01-Basics\06-Insertion Points in Custom Elements\sample-element.html" />
+    <Content Include="01-Basics\06-Insertion Points in Custom Elements\Sample01.html" />
+    <Content Include="01-Basics\06-Insertion Points in Custom Elements\Sample02.html" />
+    <Content Include="01-Basics\07-Insertion Points using CSS selectors\sample-element.html" />
+    <Content Include="01-Basics\07-Insertion Points using CSS selectors\Sample01.html" />
+    <Content Include="01-Basics\10-Nesting Elements - using templates\sample-child.html" />
+    <Content Include="01-Basics\10-Nesting Elements - using templates\sample-parent.html" />
+    <Content Include="01-Basics\10-Nesting Elements - using templates\Sample01.html" />
+    <Content Include="01-Basics\09-Nesting Elements - using Insertion Point\sample-child.html" />
+    <Content Include="01-Basics\09-Nesting Elements - using Insertion Point\sample-parent.html" />
+    <Content Include="01-Basics\09-Nesting Elements - using Insertion Point\Sample01.html" />
+    <Content Include="01-Basics\09-Nesting Elements - using Insertion Point\Sample02.html" />
+    <Content Include="01-Basics\11-Nesting Elements - Insertion Point and CSS Selector\sample-child.html" />
+    <Content Include="01-Basics\11-Nesting Elements - Insertion Point and CSS Selector\sample-parent.html" />
+    <Content Include="01-Basics\11-Nesting Elements - Insertion Point and CSS Selector\Sample01.html" />
+    <Content Include="01-Basics\12-Static host attributes\sample-element.html" />
+    <Content Include="01-Basics\12-Static host attributes\Sample01.html" />
+    <Content Include="01-Basics\08-Lifecycle callbacks\sample-element.html" />
+    <Content Include="01-Basics\08-Lifecycle callbacks\Sample01.html" />
+    <Content Include="01-Basics\08-Lifecycle callbacks\Sample02.html" />
+    <Content Include="01-Basics\08-Lifecycle callbacks\Sample03.html" />
+    <Content Include="01-Basics\05-Custom constructor\sample-element.html" />
+    <Content Include="01-Basics\05-Custom constructor\Sample01.html" />
+    <Content Include="01-Basics\04-Ready event, simple data bind\sample-element.html" />
+    <Content Include="01-Basics\04-Ready event, simple data bind\Sample01.html" />
+    <Content Include="01-Basics\04-Ready event, simple data bind\Sample02.html" />
+    <Content Include="01-Basics\04-Ready event, simple data bind\Sample03.html" />
+    <Content Include="01-Basics\03-Registering Custom Elements in callers\sample-element.html" />
+    <Content Include="01-Basics\03-Registering Custom Elements in callers\Sample01.html" />
+    <Content Include="01-Basics\03-Registering Custom Elements in callers\Sample03.html" />
+    <Content Include="01-Basics\03-Registering Custom Elements in callers\Sample02.html" />
+    <Content Include="02-Properties\01-Basic Properties\Sample02.html" />
+    <Content Include="02-Properties\08-Updating Properties reflect back to attributes\sample-element.html" />
+    <Content Include="02-Properties\08-Updating Properties reflect back to attributes\Sample01.html" />
+    <Content Include="02-Properties\08-Updating Properties reflect back to attributes\Sample02.html" />
+    <Content Include="02-Properties\07-Change Observer - multiple properties\sample-element.html" />
+    <Content Include="02-Properties\07-Change Observer - multiple properties\Sample01.html" />
+    <Content Include="02-Properties\07-Change Observer - multiple properties\Sample02.html" />
+    <Content Include="02-Properties\03-Simple method binding\Sample01.html" />
+    <Content Include="02-Properties\04-Compute methods\sample-element.html" />
+    <Content Include="02-Properties\04-Compute methods\Sample01.html" />
+    <Content Include="02-Properties\04-Compute methods\Sample02.html" />
+    <Content Include="02-Properties\03-Simple method binding\sample-element.html" />
+    <Content Include="02-Properties\03-Simple method binding\Sample02.html" />
+    <Content Include="02-Properties\02-Set Properties through Constructor\sample-element.html" />
+    <Content Include="02-Properties\02-Set Properties through Constructor\Sample01.html" />
+    <Content Include="02-Properties\01-Basic Properties\sample-element.html" />
+    <Content Include="02-Properties\01-Basic Properties\Sample01.html" />
+    <Content Include="02-Properties\01-Basic Properties\Sample03.html" />
+    <Content Include="02-Properties\05-Updating Properties from consumer\sample-element.html" />
+    <Content Include="02-Properties\05-Updating Properties from consumer\Sample01.html" />
+    <Content Include="02-Properties\05-Updating Properties from consumer\Sample02.html" />
+    <Content Include="02-Properties\06-Change Observer\sample-element.html" />
+    <Content Include="02-Properties\06-Change Observer\Sample01.html" />
+    <Content Include="02-Properties\06-Change Observer\Sample02.html" />
+    <Content Include="03-DOM acess\01\sample-element.html" />
+    <Content Include="03-DOM acess\01\Sample01.html" />
+    <Content Include="bower_components\polymer\LICENSE.txt" />
+    <Content Include="bower_components\polymer\polymer-micro.html" />
+    <Content Include="bower_components\polymer\polymer-mini.html" />
+    <Content Include="bower_components\polymer\polymer.html" />
+    <Content Include="bower_components\webcomponentsjs\CustomElements.js" />
+    <Content Include="bower_components\webcomponentsjs\CustomElements.min.js" />
+    <Content Include="bower_components\webcomponentsjs\HTMLImports.js" />
+    <Content Include="bower_components\webcomponentsjs\HTMLImports.min.js" />
+    <Content Include="bower_components\webcomponentsjs\MutationObserver.js" />
+    <Content Include="bower_components\webcomponentsjs\MutationObserver.min.js" />
+    <Content Include="bower_components\webcomponentsjs\ShadowDOM.js" />
+    <Content Include="bower_components\webcomponentsjs\ShadowDOM.min.js" />
+    <Content Include="bower_components\webcomponentsjs\webcomponents-lite.js" />
+    <Content Include="bower_components\webcomponentsjs\webcomponents-lite.min.js" />
+    <Content Include="bower_components\webcomponentsjs\webcomponents.js" />
+    <Content Include="bower_components\webcomponentsjs\webcomponents.min.js" />
+    <Content Include="packages.config" />
+    <Content Include="bower_components\polymer\.bower.json" />
+    <Content Include="bower_components\polymer\bower.json" />
+    <Content Include="bower_components\polymer\build.log" />
+    <Content Include="bower_components\webcomponentsjs\.bower.json" />
+    <Content Include="bower_components\webcomponentsjs\bower.json" />
+    <Content Include="bower_components\webcomponentsjs\build.log" />
+    <Content Include="bower_components\webcomponentsjs\package.json" />
+    <Content Include="bower_components\webcomponentsjs\README.md" />
+    <Content Include="bower.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="01-Basics\02-Custom Elements %28and registration%29 in separate file\Sample01.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57857</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57857/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

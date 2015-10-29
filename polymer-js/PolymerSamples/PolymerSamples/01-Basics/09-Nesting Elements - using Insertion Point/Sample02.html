@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--importing custom elements-->
+    <link rel="import" href="sample-parent.html">
+    <link rel="import" href="sample-child.html">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="host"></div>
+    <script>
+        var host = document.getElementById("host");
+        var op1 = new SampleParent();
+        op1.id = "sampleParent1";
+        var oc1 = new SampleChild();
+        oc1.id = "sampleChild1";
+        var oc2 = new SampleChild();
+        oc2.id = "sampleChild2";
+        var oc3 = new SampleChild();
+        oc3.id = "sampleChild3";
+
+        oc1.appendChild(oc2);
+        op1.appendChild(oc1);
+        op1.appendChild(oc3);
+        host.appendChild(op1);
+    </script>
+</body>
+</html>

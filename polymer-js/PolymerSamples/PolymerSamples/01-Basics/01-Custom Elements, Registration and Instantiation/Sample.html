@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!-- custom element "sample-elment" being defined -->
+    <dom-module id="sample-element">
+
+        <!--main markup of "sample-element" (included inside "template")-->
+        <template>
+            <p>Hello! This sample element!</p>
+        </template>
+
+        <script>
+            HTMLImports.whenReady(function () { //once all <link rel="import"> tags are imported
+                console.log("imports are loaded");
+                //register "custom element"
+                Polymer({
+                    is: "sample-element" //name of custom element
+                });
+            });
+        </script>
+
+    </dom-module>
+
+    <!--using custom element "sample-element" in normal HTML-->
+    <sample-element></sample-element>
+
+    <script>
+        //fired after all polymer web components are loaded and ready to be consumed
+        window.addEventListener('WebComponentsReady', function (e) {
+            console.log('all custom components are loaded');
+            //usually helpful when you would like to interact with the custom element here
+        });
+    </script>
+</body>
+</html>

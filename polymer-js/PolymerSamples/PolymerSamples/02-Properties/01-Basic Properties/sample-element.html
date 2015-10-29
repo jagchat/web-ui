@@ -1,0 +1,26 @@
+﻿<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="sample-element">
+
+    <template>
+
+        <p>Hello! I am <strong>{{firstName}}</strong> <strong>{{lastName}}</strong>!
+        </p>
+
+        <!--from docs: String concatenation is not supported inside a tag, and the tag can’t contain any whitespace-->
+        <!--This will not work ""<strong>{{firstName}} {{lastName}}</strong>" (as it contains a space within tag)-->
+
+    </template>
+
+    <script>
+        var SampleElement = Polymer({
+            is: "sample-element", 
+
+            properties: {
+                firstName: String, //String, Number, Date, Boolean, Array, Object
+                lastName: String
+            }
+        });
+    </script>
+
+</dom-module>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--importing custom element "sample-element" definition-->
+    <link rel="import" href="sample-element.html">
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <!--instantiate custom element "sample-element" using JS-->
+    <div id="host"></div>
+    <script>
+        var host = document.getElementById("host");
+
+        var o1 = new SampleElement();
+        var div1 = document.createElement("div");
+        div1.setAttribute("style", "border: dotted 1px #C0C0C0");
+        div1.innerHTML = "Well this is custom content";
+        o1.appendChild(div1);
+        host.appendChild(o1);
+
+        var o2 = new SampleElement();
+        var div2 = document.createElement("div");
+        div2.setAttribute("style", "border: dotted 1px #C0C0C0");
+        div2.innerHTML = "Well this is more content";
+        o2.appendChild(div2);
+        host.appendChild(o2);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- custom element "sample-elment" being defined -->
+<dom-module id="sample-element">
+
+    <!--main markup of "sample-element" (included inside "template")-->
+    <template>
+        <p>Hello! I am <strong>{{FullName}}</strong>!</p>
+    </template>
+
+    <script>
+        //register custom element 
+        //"Polymer" function - creates instance of custom element using document.createElement and returns it
+        var SampleElement = Polymer({
+            is: "sample-element", //name of custom element
+
+            ready: function () {
+                //called first
+                this.FullName = "";
+            },
+
+            //this gets automatically called (after instance creation) and
+            //when used constructor with two params
+            factoryImpl: function (fn, ln) { 
+                //called after "ready"
+                this.FirstName = fn;
+                this.LastName = ln;
+                //refresh "FullName" with latest data (bindings in <template> automatically refresh)
+                this.FullName = this.FirstName + " " + this.LastName;
+            }
+
+        });
+    </script>
+
+</dom-module>

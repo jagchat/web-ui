@@ -1,0 +1,18 @@
+﻿<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="sample-element">
+
+    <template>
+        <p>First Name <span id="lblFirstName">Jag</span></p>
+    </template>
+
+    <script>
+        var SampleElement = Polymer({
+            is: "sample-element",
+            ready: function () {
+                console.log(this.$.lblFirstName.textContent);
+            }
+        });
+    </script>
+
+</dom-module>

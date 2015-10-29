@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--importing custom element "sample-element" definition-->
+    <link rel="import" href="sample-element.html">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        //register custom element
+        Polymer({
+            is: "sample-element" //name of custom element
+        });
+    </script>
+
+    <!--instantiate custom element "sample-element" using JS-->
+    <div id="host"></div>
+    <script>
+        var host = document.getElementById("host");
+        var o = document.createElement("sample-element");
+        host.appendChild(o);
+    </script>
+</body>
+</html>

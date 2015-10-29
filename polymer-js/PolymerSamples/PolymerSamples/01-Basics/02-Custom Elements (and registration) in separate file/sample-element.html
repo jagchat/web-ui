@@ -1,0 +1,18 @@
+﻿<link rel="import" href="../../bower_components/polymer/polymer.html"><!--you can also place this in caller-->
+
+<!-- custom element "sample-elment" being defined -->
+<dom-module id="sample-element">
+
+    <!--main markup of "sample-element" (included inside "template")-->
+    <template>
+        <p>Hello! This sample element!</p>
+    </template>
+
+    <script>
+        //register custom element
+        Polymer({
+            is: "sample-element" //name of custom element
+        });
+    </script>
+
+</dom-module>

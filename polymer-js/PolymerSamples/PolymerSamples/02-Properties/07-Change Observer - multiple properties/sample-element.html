@@ -1,0 +1,49 @@
+﻿<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="sample-element">
+
+    <template>
+
+        <p>First number: <strong>{{firstNo}}</strong> </p>
+        <p>Second number: <strong>{{secondNo}}</strong></p>
+        <hr />
+        <p>Sum: <strong>{{sum}}</strong> </p>
+
+    </template>
+
+    <script>
+        var SampleElement = Polymer({
+            is: "sample-element",
+
+            properties: {
+                firstNo: {
+                    type: Number,
+                    value: 0
+                },
+                secondNo: {
+                    type: Number,
+                    value: 0
+                },
+                sum: {
+                    type: Number,
+                    value: 0
+                }
+            },
+
+            //observer for multiple properties
+            //
+            observers: [
+                'computeSum(firstNo, secondNo)'
+            ],
+
+            computeSum: function (fn, sn) {
+                this.sum = fn + sn;
+            },
+
+            factoryImpl: function (fn, sn) {
+                this.firstNo = fn ? fn : this.firstNo;
+                this.secondNo = sn ? sn : this.secondNo;
+            }
+        });
+    </script>
+</dom-module>

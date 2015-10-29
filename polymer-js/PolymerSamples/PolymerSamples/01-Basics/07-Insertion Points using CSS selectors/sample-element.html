@@ -1,0 +1,31 @@
+﻿<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- custom element "sample-elment" being defined -->
+<dom-module id="sample-element">
+
+    <!--main markup of "sample-element" (included inside "template")-->
+    <template>
+        <p>
+            Hello! This is main content..
+        </p>
+        <!--Insertion point (based on CSS selectors)-->
+
+        <!--Place all content related to <p> here-->
+        <content select="p"></content>
+
+        <!--Place all content related to any tag with id "myContent" here-->
+        <content select="#myContent"></content>
+
+        <!--Place all content related to any tag with css class "flavor" here-->
+        <content select=".flavor"></content>
+    </template>
+
+    <script>
+        //register custom element
+        //"Polymer" function - creates instance of custom element using document.createElement and returns it
+        var SampleElement = Polymer({
+            is: "sample-element" //name of custom element
+        });
+    </script>
+
+</dom-module>

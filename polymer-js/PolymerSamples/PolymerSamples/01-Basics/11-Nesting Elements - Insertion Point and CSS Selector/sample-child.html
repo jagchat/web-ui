@@ -1,0 +1,42 @@
+﻿<!-- custom element "sample-child" being defined -->
+<dom-module id="sample-child">
+
+    <!--main markup of "sample-child" (included inside "template")-->
+    <template>
+        <p>sample-child! check Dev Tools || console!</p>
+    </template>
+
+    <script>
+        //register custom element 
+        //"Polymer" function - creates instance of custom element using document.createElement and returns it
+        var SampleChild = Polymer({
+            is: "sample-child", //name of custom element
+
+            created: function() {
+                console.log("#" + this.id + " - created");
+            },
+
+            attached: function() {
+                console.log("#" + this.id + " - attached");
+            },
+
+            detached: function() {
+                console.log("#" + this.id + " - detached");
+            },
+
+            attributeChanged: function() {
+                console.log("#" + this.id + " - attributeChanged");
+            },
+
+            ready: function () {
+                console.log("#" + this.id + " - ready");
+            },
+
+            factoryImpl: function () {
+                console.log("#" + this.id + " - factoryImpl");
+            }
+
+        });
+    </script>
+
+</dom-module>
