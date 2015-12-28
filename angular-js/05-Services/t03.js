@@ -1,6 +1,18 @@
 //using factory service syntax
 var app = angular.module("app", []);
 
+app.controller('emp', ['$scope', 'calcService', function($scope, calcService){
+	$scope.a = 10;
+	$scope.b = 20;
+	
+	$scope.doSum = function(){
+		//$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+		calcService.getSum($scope.a, $scope.b, function(data){
+			$scope.sum = data;	
+		});
+	};
+}]);
+
 app.provider('calcService', function(){
 	
 	var baseUrl = '';
@@ -32,16 +44,4 @@ app.provider('calcService', function(){
 
 app.config(["calcServiceProvider", function(calcServiceProvider) {
 	calcServiceProvider.config('http://localhost:4467');
-}]);
-
-app.controller('emp', ['$scope', 'calcService', function($scope, calcService){
-	$scope.a = 10;
-	$scope.b = 20;
-	
-	$scope.doSum = function(){
-		//$scope.sum = parseInt($scope.a) + parseInt($scope.b);
-		calcService.getSum($scope.a, $scope.b, function(data){
-			$scope.sum = data;	
-		});
-	};
 }]);
