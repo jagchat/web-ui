@@ -17,5 +17,6 @@ module.exports = {
 				presets: ['es2015']
 			}
 		}]
-	}
+	},
+	watch: true //optional
 };
