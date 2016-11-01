@@ -8,7 +8,7 @@ app.controller('sample', ['$scope', function($scope) {
 	$scope.b = 20;
 
 	$scope.changeValueB = function(){
-		$scope.b = 30; 
+		$scope.b = 30; //applies to current scope
 	}	
 
 }]);
