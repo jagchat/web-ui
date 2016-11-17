@@ -37,6 +37,26 @@
 			x = {{a.x}}, y = {{b.y}}
 		</div>		
 	</div>	
-	<hr>		
+	<hr>
+	<strong>Custom data to Transclusion scope</strong>
+	<div id="div1" ng-controller="sample">
+		This is controller
+		x = {{a.x}}, y = {{b.y}}<br>		
+		<div message4>
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		</div>		
+	</div>	
+	<hr>
+	<strong>Custom Transclusion scope</strong>
+	<div id="div1" ng-controller="sample">
+		This is controller
+		x = {{a.x}}, y = {{b.y}}<br>		
+		<div message5>
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		</div>		
+	</div>	
+	<hr>				
 </body>
 </html>
