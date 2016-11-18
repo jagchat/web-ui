@@ -61,16 +61,8 @@ app.directive('message4', function(){
 				y: 20
 			};
 
-			//NOTE:
-			//Transcluded element instance and transclusion scope is created ONLY ONCE when a transclude function is called with no callback function (as follows)
-			//$element.find('#innerPanel').append($transclude()); //NOT RECOMMENDED ANYMORE
-			
-			//Transcluded element instance and transclusion scope is created (and cloned) every time a transclude function is called with a callback function (more suitable for multiple transcludes within a directive and is CURRENTLY RECOMMENDED WAY)
-			//This is also called "clone attach function"
-			
-			
 			//manual transclusion - not using ng-transclude in msg2.htm			
-			//we can modify the scope using transclude function as follows			
+			//we can modify the scope using "clone linking transclude function" as follows			
 			$transclude(function(transEl, $transScope){
 				$transScope.b = {};
 				$transScope.b.y = $scope.b.y;
