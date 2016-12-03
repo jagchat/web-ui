@@ -29,7 +29,23 @@ function doProcess2(p){
 	//return v; //throws compilation error
 }
 
+//block-level (local) functions using 'let'
+function doProcess3(p){
+	if(p == 1){
+		return 1;
+	}
+	else{
+		let f = function(a){
+			return a * a;
+		};
+		return f(p);
+	}
+	
+}
+
 $(function(){
 	//console.log(doProcess1(2));
-	console.log(doProcess2(2));
+	//console.log(doProcess2(2));
+	console.log(doProcess3(4));
+
 });
