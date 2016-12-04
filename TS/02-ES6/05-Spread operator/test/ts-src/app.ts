@@ -16,7 +16,8 @@ $(function(){
 	//doProcess1(...ar); 
 
 	////an alternative way
-	////works with no issues
+	////works with no issues (using type assertion using 'any')
+	////or use compiler option 'lib', if using TS 2.0+, as included in 'object enhancements' example
 	//(<any>doProcess1)(...ar);
 
 	////can be used to become part of other arrays (expands existing array)
