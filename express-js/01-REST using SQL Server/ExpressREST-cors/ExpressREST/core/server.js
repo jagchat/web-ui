@@ -45,7 +45,9 @@ router.route("/api/employees/:empId").get(function (req, res) {
 }).delete(function (req, res) {
 	emp.delete(req, res, req.params.empId);
 });
-
+router.route("/api/employees/dept/:deptno").get(function (req, res) {
+	emp.getListByDeptno(req, res, req.params.deptno);
+})
 app.use('/', router);
 
 app.listen(settings.webPort, function () {

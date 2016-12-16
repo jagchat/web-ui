@@ -12,6 +12,17 @@ exports.getList = function (req, res) {
     });
 };
 
+exports.getListByDeptno = function (req, res, deptno) {
+    db.executeSql("SELECT * FROM emp WHERE deptno=" + deptno, function (data, err) {
+        if (err) {
+            res.status(500).json(err);
+        }
+        else {
+            res.json(data);
+        }
+    });
+};
+
 exports.get = function (req, res, empno) {
     db.executeSql("SELECT * FROM emp WHERE empno=" + empno, function (data, err) {
         if (err) {
