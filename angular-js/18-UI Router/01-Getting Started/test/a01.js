@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ui.router']);
 
-app.config(['$stateProvider', function($stateProvider, $urlRouterProvider){
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 	$stateProvider
 	.state('firstMessage', {
 		url: '/first-msg',
@@ -16,10 +16,12 @@ app.config(['$stateProvider', function($stateProvider, $urlRouterProvider){
 		url: '/',
 		template: '<strong>you are at root..click something else</strong>'
 	})
-	.state('otherwise',{
-		url: "*path",
-		template: '<strong>no route available</strong'
-	})
+	// .state('otherwise',{
+	// 	url: "*path",
+	// 	template: '<strong>no route available</strong'
+	// });
+
+	$urlRouterProvider.otherwise('/'); //redirects to '/' when no round is found (just another way)
 
 }]);
 
