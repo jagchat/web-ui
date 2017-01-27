@@ -28,7 +28,13 @@ app.provider('dataService', function(){
 				url: baseUrl + '/employees/' + empno,
 				method: 'GET'
 			});
-		};		
+		};
+		oDataService.getDepartment = function(deptno) {
+			return $http({
+				url: baseUrl + '/depts/' + deptno,
+				method: 'GET'
+			});
+		};			
 		return oDataService;		
 	}];
 

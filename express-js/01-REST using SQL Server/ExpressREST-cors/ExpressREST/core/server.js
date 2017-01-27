@@ -1,6 +1,7 @@
 var express = require('express');
 var settings = require("../settings");
 var emp = require("../controllers/employee");
+var dept = require("../controllers/dept");
 var bodyParser = require('body-parser');
 var cors = require("cors");
 
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 router.get('/', function (req, res) {
-	res.json({ msg: "Use '/api/employees' to fetch all employees" });
+	res.json({ msg: "Use '/api/employees' to fetch all employees or '/api/depts' to fetch all departments" });
 });
 
 ////-->method 1
@@ -47,7 +48,22 @@ router.route("/api/employees/:empId").get(function (req, res) {
 });
 router.route("/api/employees/dept/:deptno").get(function (req, res) {
 	emp.getListByDeptno(req, res, req.params.deptno);
-})
+});
+
+//departments stuff
+router.route("/api/depts").get(function (req, res) {
+	dept.getList(req, res);
+}).post(function (req, res) {
+	dept.add(req, res);
+});
+router.route("/api/depts/:deptno").get(function (req, res) {
+	dept.get(req, res, req.params.deptno);
+}).put(function (req, res) {
+	dept.update(req, res, req.params.deptno);
+}).delete(function (req, res) {
+	dept.delete(req, res, req.params.deptno);
+});
+
 app.use('/', router);
 
 app.listen(settings.webPort, function () {
