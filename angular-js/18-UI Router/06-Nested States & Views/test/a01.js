@@ -37,7 +37,7 @@ app.config(['$stateProvider', function($stateProvider, $urlRouterProvider){
 			templateUrl: 'emp-detail-info.htm',
 			controller: 'empDetailController'
 		},
-		'dept-detail@details': {
+		'dept-detail@details': {//render dept-detail-info.htm view in 'ui-view=dept-detail' available in emp-detail-info.htm (of 'details' state)
 			templateUrl: 'dept-detail-info.htm',
 			controller: 'deptDetailController'
 		}
