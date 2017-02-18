@@ -77,8 +77,17 @@ $(function(){
 	//console.log(`Designation = ${designation}`);
 	
 	//TS alternative - along with variable renaming
-	let {designation: desig = '-NA-'}: {designation?: string} = oEmp2; 	
-	console.log(`Designation = ${desig}`);
+	//let {designation: desig = '-NA-'}: {designation?: string} = oEmp2; 	
+	//console.log(`Designation = ${desig}`);
 
-	
+	//can send options as last parameter as follows:
+	let doProcess = function(a, b, {option1, option2, option3}){
+		console.log(`a = ${a}`);
+		console.log(`b = ${b}`);
+		console.log(`option1 = ${option1}`);
+		console.log(`option2 = ${option2}`);
+		console.log(`option3 = ${option3}`);
+	}
+
+	doProcess(10, 20, {option1: '1', option2: '2', option3: '3'});
 });
