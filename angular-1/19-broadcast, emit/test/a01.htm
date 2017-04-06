@@ -10,6 +10,7 @@
 <body ng-app="app">
 	
 	<div ng-controller="calc1" style="border: 1px solid blue;margin: 5px;padding:5px">
+		<strong>Parent Controller</strong> <br>
 		a = {{a}}<br>
 		b = {{b}}<br>
 		sum = {{ a + b }}
@@ -17,6 +18,7 @@
 		<button ng-click="doCalc1Broadcast1()">Calc 1 - Broadcast 1</button>
 		<button ng-click="doCalc1BroadcastRoot()">Calc 1 - Root Broadcast</button>
 		<div ng-controller="child1calc1" style="border: 1px solid green;margin:5px;padding:5px">
+			<strong>Child Controller</strong><br>
 			<button ng-click="doChild1Calc1Emit1()">Child 1 - Calc 1 - Emit 1</button>
 			<button ng-click="doChild1Calc1Emit2()">Child 1 - Calc 1 - Emit 2 (with data)</button>
 			<button ng-click="doChild1Calc1EmitRoot()">Child 1 - Calc 1 - Emit Root</button>
@@ -24,6 +26,7 @@
 	</div>
 	
 	<div ng-controller="calc2" style="border: 1px solid blue;margin:5px;padding:5px">
+		<strong>Sibling</strong> <br>
 		c = {{c}}<br>
 		d = {{d}}<br>
 		sum = {{ c + d }}
