@@ -3,12 +3,6 @@ var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
 var sourcemaps = require('gulp-sourcemaps');
 
-//gulp.task("default", function () {
-//    return tsProject.src()
-//        .pipe(tsProject())
-//        .js.pipe(gulp.dest("."));
-//});
-
 gulp.task("default", function () {
     return tsProject.src()
         .pipe(sourcemaps.init())
