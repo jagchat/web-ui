@@ -89,7 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="gruntfile.js" />
     <Content Include="node_modules\app\app.jsx" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
