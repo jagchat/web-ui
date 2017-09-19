@@ -92,6 +92,7 @@
     <Content Include="Scripts\app\App.jsx" />
     <Content Include="Scripts\app\JustAFolder\SampleDynamicInFolder.jsx" />
     <Content Include="Scripts\app\JustAFolder\SampleInFolder.jsx" />
+    <Content Include="Scripts\app\SampleDynamicLoader.js" />
     <Content Include="Scripts\app\SampleNestedDynamicChild.jsx" />
     <Content Include="Scripts\app\SampleNestedDynamicParent.jsx" />
     <Content Include="Scripts\app\SampleDynamic.jsx" />

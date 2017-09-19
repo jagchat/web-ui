@@ -22,19 +22,13 @@ class App extends React.Component {
 
 
         //dynamic loading, but asynchronous 
-        let p1 = new Promise(resolve => {
-            require.ensure([], () => {
-                resolve({
-                    SampleDynamic: require('SampleDynamic')
-                });
-            }, 'SampleDynamic');
-        });
-
+        let p1 = new Promise(resolve => require.ensure([], () => resolve(require('SampleDynamic')), 'SampleDynamic'));
         p1.then((o) => {
-            this.ComponentSampleDynamic = o.SampleDynamic.SampleDynamic;
-            this.setState({ SampleDynamic: o.SampleDynamic.SampleDynamic });
+            this.ComponentSampleDynamic = o.SampleDynamic;
+            this.setState({ SampleDynamic: o.SampleDynamic });
         });
 
+        //just testing other ways
         let p2 = new Promise(resolve => {
             require.ensure([], () => {
                 resolve({

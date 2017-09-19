@@ -15,4 +15,3 @@ export class SampleDynamic extends React.Component {
 
     }
 }
-

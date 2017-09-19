@@ -150,18 +150,16 @@
 	
 	            //dynamic loading, but asynchronous 
 	            var p1 = new Promise(function (resolve) {
-	                __webpack_require__.e/* nsure */(1, function () {
-	                    resolve({
-	                        SampleDynamic: __webpack_require__(195)
-	                    });
+	                return __webpack_require__.e/* nsure */(1, function () {
+	                    return resolve(__webpack_require__(195));
 	                });
 	            });
-	
 	            p1.then(function (o) {
-	                _this.ComponentSampleDynamic = o.SampleDynamic.SampleDynamic;
-	                _this.setState({ SampleDynamic: o.SampleDynamic.SampleDynamic });
+	                _this.ComponentSampleDynamic = o.SampleDynamic;
+	                _this.setState({ SampleDynamic: o.SampleDynamic });
 	            });
 	
+	            //just testing other ways
 	            var p2 = new Promise(function (resolve) {
 	                __webpack_require__.e/* nsure */(2, function () {
 	                    resolve({
