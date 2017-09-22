@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<script src="~/Scripts/Home/app.js"></script>
+<script src="~/Scripts/Home/dataService.js"></script>
+<script src="~/Scripts/Home/deptController.js"></script>
+<script src="~/Scripts/Home/deptRow.js"></script>
+<script src="~/Scripts/Home/deptDynamicDetails.js"></script>
+<script src="~/Scripts/Home/empList.js"></script>
+<script src="~/Scripts/Home/empRow.js"></script>
+<script src="~/Scripts/Home/Components/tab.js"></script>
+<script src="~/Scripts/Home/Components/tabset.js"></script>
+<style>
+    .row.dept {
+        border-bottom: 1px solid lightgray;
+    }
+
+        .row.dept.header {
+            font-weight: bold
+        }
+
+    .column.dept {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .tab.active {
+        color: blue;
+    }
+</style>
+<h2>XYZ Management System</h2>
+<hr />
+<div ng-app="app" ng-controller="deptController">
+    <div class="row dept header">
+        <div class="small-1 column dept">Deptno</div>
+        <div class="small-1 column dept">Dname</div>
+        <div class="small-1 column dept"></div>
+    </div>
+
+    <div ng-repeat="oDept in depts">
+        <dept-row dept="oDept" toggle-selected-callback="toggleSelectedDept"></dept-row>
+    </div>
+</div>

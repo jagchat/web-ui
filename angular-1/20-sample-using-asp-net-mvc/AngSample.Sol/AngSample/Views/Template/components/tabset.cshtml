@@ -1,0 +1,16 @@
+﻿<div class="tabset">
+
+    <div class="row">
+        <div class="column small-2 end tab"
+             ng-click="setActiveTab(tab.id)"
+             ng-class="{'active': tab.isActive}" 
+             ng-repeat="tab in tabs">
+            {{tab.text}}
+        </div>
+    </div>
+
+    <ng-transclude>
+
+    </ng-transclude>
+
+</div>

@@ -1,0 +1,24 @@
+﻿<style>
+    .row.emp {
+        border-bottom: 1px solid lightgray;
+    }
+
+    .row.emp.header {
+        font-weight: bold
+    }
+
+    .column.emp {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+</style>
+
+<div class="row emp header">
+    <div class="small-1 column emp end">Empno</div>
+    <div class="small-1 column emp end">Ename</div>
+</div>
+<div ng-if="isLoading">Loading..</div>
+<div ng-repeat="oEmp in emps">
+    <emp-row emp="oEmp"></emp-row>
+</div>

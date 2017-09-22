@@ -1,0 +1,34 @@
+﻿<div class="row dept" ng-click="toggleSelected()">
+    <div class="small-1 column dept">{{dept.Deptno}}</div>
+    <div class="small-1 column dept">{{dept.Dname}}</div>
+    <div class="small-9 small-offset-1 column dept">
+        <i ng-class="dept.isSelected ? 'fi-arrow-up' : 'fi-arrow-down'"></i>
+    </div>
+</div>
+<div ng-if="dept.isSelected" class="row" style="padding: 25px; padding-left: 50px;">
+    <tabset>
+        <tab id="tab1" text="Tab Static" active="true">
+            <div class="row dept" style="padding-top: 25px;">
+                <div>
+                    <strong>Static Content</strong>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="small-2 column dept">Dept. No:</div>
+                    <div class="small-10 column dept">{{dept.Deptno}}</div>
+                </div>
+                <div class="row">
+                    <div class="small-2 column dept">Dept. Name:</div>
+                    <div class="small-10 column dept">{{dept.Dname}}</div>
+                </div>
+            </div>
+        </tab>
+        <tab id="tab2" text="Tab Dynamic">
+            <dept-dynamic-details deptno="{{dept.Deptno}}"></dept-dynamic-details>
+        </tab>
+        <tab id="tab3" text="Tab On Demand" template-url="/Template/empListRenderer">
+            
+        </tab>
+    </tabset>
+    
+</div>
