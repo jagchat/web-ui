@@ -1,20 +1,20 @@
 var path = require('path');
 var webpack = require('webpack');
-module.exports={
+module.exports = {
 	devtool: 'source-map',
 	entry: ['./ts-src/app.ts'],
-	output:{
+	output: {
 		path: './build',
 		filename: 'app.js'
 	},
-	module:{
-		loaders:[{
-			test:/\.ts$/,
+	module: {
+		loaders: [{
+			test: /\.ts$/,
 			include: path.resolve(__dirname, "ts-src"),
-			loader: 'ts-loader'
+			loader: 'babel-loader?presets[]=es2015!ts-loader'
 		}]
 	},
-	resolve:{
+	resolve: {
 		extensions: ["", ".webpack.js", ".web.js", ".ts", ".js"]
 	},
 	watch: true
