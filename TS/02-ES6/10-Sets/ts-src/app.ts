@@ -6,8 +6,7 @@ $(function () {
 
 	let s = new Set();
 	s.add(1);
-	s.add(3);
-	s.add(2);
+	s.add(3).add(2);
 
 	console.log(`count = ${s.size}`); //gives 3
 	console.log(`contains 2? ${s.has(2)}`);
@@ -15,8 +14,25 @@ $(function () {
 
 	console.log(`Traversing..`);
 	s.forEach(function (v, key, ownerSet) {
-		console.log(v); //for primitives, value and key are same
+		console.log(v); //value and key are same in sets
 	})
+
+	// for (let v of s) { //just another way
+	// 	console.log(v);
+	// }
+
+	// for (let v of s.values()) { //'values' iterator (default)
+	// 	console.log(v);
+	// }
+
+	// for (let k of s.keys()) { //'values' iterator
+	// 	console.log(k);
+	// }
+
+	for (let e of s.entries()) { //'entries' iterator
+		//'e' contains [k,v]
+		console.log(e[0]);
+	}
 
 	//forEach with custom context (modifying "this")
 	let o = {
@@ -29,7 +45,7 @@ $(function () {
 				this.display(v);
 			}, this); //can set current object (this) to forEach
 
-			set.forEach((v, key, ownerSet) => this.display(v)); //just another (easier) way
+			//set.forEach((v, key, ownerSet) => this.display(v)); //just another (easier) way
 		}
 	};
 	o.process(s);
@@ -62,7 +78,7 @@ $(function () {
 	console.log(uSet);
 
 	//Intersect (common)
-	let iSet = new Set([...ar1].filter(x => ar2.has(x)));
+	let iSet = new Set([...ar1].filter(x => ar2.has(x))); //'filter' is array method
 	console.log(`Intersect Set Size: ${iSet.size}`);
 	console.log(iSet);
 
