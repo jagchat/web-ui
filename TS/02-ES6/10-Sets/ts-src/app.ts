@@ -29,9 +29,13 @@ $(function () {
 	// 	console.log(k);
 	// }
 
-	for (let e of s.entries()) { //'entries' iterator
-		//'e' contains [k,v]
-		console.log(e[0]);
+	// for (let e of s.entries()) { //'entries' iterator
+	// 	//'e' contains [k,v]
+	// 	console.log(e[0]);
+	// }
+
+	for (let [k, v] of s.entries()) { //'entries' iterator and destructuring
+		console.log(k);
 	}
 
 	//forEach with custom context (modifying "this")
