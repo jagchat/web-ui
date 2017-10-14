@@ -90,4 +90,7 @@ $(function () {
 	let mSet = new Set([...ar1].filter(x => !ar2.has(x)));
 	console.log(`Differnce (minus) Set Size: ${mSet.size}`);
 	console.log(mSet);
+
+	let [x, y] = ar1; //set destructuring
+	console.log(`x=${x}, y=${y}`); //shows 1 and 2
 });

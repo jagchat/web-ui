@@ -1,4 +1,4 @@
-declare var $:any;
+declare var $: any;
 
 // //arrow function (with no params and only a return statement)
 //let doProcess1 = function (){
@@ -39,12 +39,22 @@ declare var $:any;
 // 	return a.join(',');
 // }
 // //or
-let doProcess5 = (...a) => a.join(',');
+//let doProcess5 = (...a) => a.join(',');
 
-$(function(){
+//with default values
+let doProcess6 = (a, b = 10, c = 20) => a + b + c;
+
+//with arrays in arrays
+//let ar = [[1, 2], [3, 4]].map((x) => x[0] + x[1]);
+let ar = [[1, 2], [3, 4]].map(([a, b]) => a + b); //another way
+console.log(ar); //[3, 7]
+
+$(function () {
 	//console.log(doProcess1());
 	//console.log(doProcess2(10));
 	//console.log(doProcess3(10,20,30));
 	//console.log(doProcess4(10,20));
-	console.log(doProcess5(10,20,30));
+	//console.log(doProcess5(10,20,30));
+	//console.log(doProcess6(10, undefined, 30)); //50
+	console.log(doProcess6(10)); //40
 });

@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"sourceMap": true
 	},
-	"files":[
+	"files": [
 		"ts-src/app.ts"
 	]
 }
