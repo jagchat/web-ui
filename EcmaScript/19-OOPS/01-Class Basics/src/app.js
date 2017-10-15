@@ -34,10 +34,18 @@ class Sample {
 	[multiplyMethodName]() {
 		return this.a * this.b;
 	}
+
+	['just' + 'Division']() {
+		return this.a / this.b;
+	}
 }
 
 $(function () {
-	let o = new Sample(5, 6);
+
+	//let o = new Sample() //defaults to zeroes in a and b
+	//or
+	let o = new Sample(5, 6); //provide values for a and b
+
 	console.log(`Sum = ${o.sum()}`);
 	o.a = 10;
 	o.b = 20;
@@ -48,4 +56,5 @@ $(function () {
 	console.log(`m = ${o.m}, a = ${o.a}`); //4000, 400
 
 	console.log(`multiply = ${o.multiply()}`);
+	console.log(`Division = ${o.justDivision()}`);
 });
