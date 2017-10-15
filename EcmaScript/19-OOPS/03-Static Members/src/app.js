@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-// Iterable class
+// Stacic members
 class Sample {
 
 	constructor() {
