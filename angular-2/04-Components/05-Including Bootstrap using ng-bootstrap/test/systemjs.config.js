@@ -20,7 +20,7 @@
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
-            //bootstrap -> npm install --save @ng-bootstrap/ng-bootstrap bootstrap@4.0.0-alpha.6 font-awesome
+            //bootstrap -> npm install --save @ng-bootstrap/ng-bootstrap bootstrap@4.0.0-alpha.6
             '@ng-bootstrap/ng-bootstrap': 'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
 
             // other libraries
