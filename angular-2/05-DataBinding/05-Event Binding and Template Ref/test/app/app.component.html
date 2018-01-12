@@ -1,0 +1,26 @@
+<div class="container">
+    <div>value of a :
+        <input class="form-control" [value]="a" (blur)="onChangeOfA($event)" />
+    </div>
+    <div>value of b :
+        <!--creating template reference variable "second" to identify the element-->
+        <!--"second" can be used any where within this template (and has to be unique)-->
+        <input #second class="form-control" [value]="b" (blur)="onChangeOfB(second.value)" />
+    </div>
+    <div>
+        <button (click)="doSum()">Sum</button>
+    </div>
+    <div>
+        Value of a = {{a}}
+        <br> Value of b = {{b}}
+
+        <!--this also works (using template ref)-->
+        <br> Value of b = {{second.value}}
+
+        <br> Sum = {{s}}
+    </div>
+    <div>
+        Try your Name (in lower case):
+        <input class="form-control" [value]="username" (keyup)="onChangeOfUserName($event)" />
+    </div>
+</div>

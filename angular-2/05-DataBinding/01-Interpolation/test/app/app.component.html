@@ -1,0 +1,12 @@
+<div class="container">
+    <div>value of a : {{a}}</div>
+    <div>value of b : {{b}}</div>
+    <div>Sum of a and b: {{a+b}}</div>
+
+    <!--not quite recommended in direct interpolation (executes many times)-->
+    <!-- <div>Using GetSum: {{getSum()}}</div> -->
+    <!-- <div>Using GetSum: {{a + b + getSum()}}</div> -->
+
+    <!--Recommended way (executes only once)-->
+    <div>Using GetSum (in ngOnInit): {{sum}}</div>
+</div>

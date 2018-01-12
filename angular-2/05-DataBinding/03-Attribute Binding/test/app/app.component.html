@@ -1,0 +1,19 @@
+<div class="container">
+    <!-- this works-->
+    <!-- <table height="h" width="w" border="1"> -->
+
+    <!-- this won't work (property binding). 'height' is not DOM object property-->
+    <!-- <table [height]="h" [width]="w" border="1"> -->
+
+    <!-- this works (attribute binding)-->
+    <table [attr.height]="h" [width]="w" border="1">
+        <tr>
+            <td>first</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>fourth</td>
+        </tr>
+    </table>
+</div>
