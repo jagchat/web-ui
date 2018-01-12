@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
     onChangeOfA(e: any) {
         //this.a = e.target.value; //string cannot be assigned to number
-        this.a = +e.target.value; //convert string to number just using '+' as prefix
+        this.a = e.target.value * 1; //convert string to number        
     }
 
     onChangeOfB(v: string) {

@@ -1,0 +1,57 @@
+<div class="container">
+    <div>value of a :
+        <!--previous way-->
+        <!-- <input class="form-control" [value]="a" (blur)="onChangeOfA($event)" /> -->
+
+        <!--two way binding -->
+        <!--[value] - one way from Component to View -->
+        <!--(blur) - one (opposite) way from View to Component and inline expression-->
+        <!-- <input class="form-control" [value]="a" (blur)="a = $event.target.value * 1" /> -->
+
+        <!--two way binding -->
+        <!--[value] - one way from Component to View -->
+        <!--(input) - change event, but inline expression and instantaneous -->
+        <input class="form-control" [value]="a" (input)="a = $event.target.value * 1" />
+
+    </div>
+    <div>value of b :
+        <!--previous way-->
+        <!-- <input class="form-control" [value]="b" (blur)="onChangeOfB($event)" /> -->
+
+        <!--another way using ngModel (needs FormsModule to be imported)-->
+        <!-- <input class="form-control" [ngModel]="b" (blur)="onChangeOfB($event)" /> -->
+
+        <!--another way using ngModel -->
+        <!-- <input class="form-control" [ngModel]="b" (ngModelChange)="onNgChangeOfB($event)" /> -->
+
+        <!--two way binding -->
+        <!--[ngModel] - one way from Component to View -->
+        <!--(ngModelChange) - change event, but inline expression and instantaneous -->
+        <!-- <input class="form-control" [ngModel]="b" (ngModelChange)="b=$event * 1" /> -->
+
+        <!--two way binding (similar to above, but compact)-->
+        <!--NOTE: binding happens only in the form of string -->
+        <!-- <input class="form-control" [(ngModel)]="b" /> -->
+
+        <!--two way binding - still can control changes using ngModelChange (or call another method during change)-->
+        <input class="form-control" [(ngModel)]="b" (ngModelChange)="b=$event * 1" />
+
+    </div>
+    <div>
+        <button (click)="doSum()">Sum</button>
+    </div>
+    <div>
+        Value of a = {{a}}
+        <br> Value of b = {{b}}
+
+        <br> Sum on click = {{s}}
+        <br> Sum instantaneous = {{ a + b}}
+    </div>
+    <div>
+        Try your Name (in lower case):
+        <!--previous way-->
+        <!-- <input class="form-control" [value]="username" (keyup)="onChangeOfUserName($event)" /> -->
+
+        <input class="form-control" [value]="username" (keyup)="username = $event.target.value.toUpperCase()" />
+    </div>
+</div>
