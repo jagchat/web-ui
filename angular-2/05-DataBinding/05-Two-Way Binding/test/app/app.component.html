@@ -32,6 +32,8 @@
         <!--two way binding (similar to above, but compact)-->
         <!--NOTE: binding happens only in the form of string -->
         <!-- <input class="form-control" [(ngModel)]="b" /> -->
+        <!--equivalent to -->
+        <!-- <input class="form-control" [ngModel]="b" (ngModelChange)="b=$event" /> -->
 
         <!--two way binding - still can control changes using ngModelChange (or call another method during change)-->
         <input class="form-control" [(ngModel)]="b" (ngModelChange)="b=$event * 1" />
@@ -49,6 +51,7 @@
     </div>
     <div>
         Try your Name (in lower case):
+
         <!--previous way-->
         <!-- <input class="form-control" [value]="username" (keyup)="onChangeOfUserName($event)" /> -->
 
