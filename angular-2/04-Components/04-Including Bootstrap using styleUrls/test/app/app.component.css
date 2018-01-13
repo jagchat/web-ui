@@ -1,0 +1,14 @@
+/* the following url gets added to styles in head element and 
+will be available through out app */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
+
+/* the following styles are for app.component only and 
+will not apply to any other (or child) components */
+
+.green-panel {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    color: white;
+}

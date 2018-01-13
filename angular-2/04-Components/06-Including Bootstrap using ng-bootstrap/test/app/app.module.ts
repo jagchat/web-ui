@@ -7,8 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
 @NgModule({
-    //only the root module requires 'NgbModule.forRoot()'
-    //rest of the modules (children) can just use 'NgbModule'
     imports: [BrowserModule, NgbModule.forRoot()],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
