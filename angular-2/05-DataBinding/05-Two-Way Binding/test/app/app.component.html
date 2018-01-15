@@ -1,21 +1,21 @@
 <div class="container">
     <div>value of a :
-        <!--previous way-->
+        <!--previous way (event binding)-->
         <!-- <input class="form-control" [value]="a" (blur)="onChangeOfA($event)" /> -->
 
         <!--two way binding -->
         <!--[value] - one way from Component to View -->
-        <!--(blur) - one (opposite) way from View to Component and inline expression-->
+        <!--(blur) - one (opposite) way from View to Component and inline (event-binding) expression-->
         <!-- <input class="form-control" [value]="a" (blur)="a = $event.target.value * 1" /> -->
 
         <!--two way binding -->
         <!--[value] - one way from Component to View -->
-        <!--(input) - change event, but inline expression and instantaneous -->
+        <!--(input) - input change event, but inline (event binding) expression and instantaneous -->
         <input class="form-control" [value]="a" (input)="a = $event.target.value * 1" />
 
     </div>
     <div>value of b :
-        <!--previous way-->
+        <!--previous way (event binding)-->
         <!-- <input class="form-control" [value]="b" (blur)="onChangeOfB($event)" /> -->
 
         <!--another way using ngModel (needs FormsModule to be imported)-->

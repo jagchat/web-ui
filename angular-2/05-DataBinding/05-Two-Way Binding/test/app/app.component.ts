@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-//Event Binding: working with default angular events
-//  -   One-Way (from View to Component)
+//Two-Way Binding: 
+//  -   various ways and using ngModel
 @Component({
     selector: 'app',
     moduleId: module.id,

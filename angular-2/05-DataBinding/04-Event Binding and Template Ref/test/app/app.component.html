@@ -1,6 +1,12 @@
 <div class="container">
     <div>value of a :
-        <input class="form-control" [value]="a" (blur)="onChangeOfA($event)" />
+        <!--using blur -->
+        <!--'blur' fire for every defocus-->
+        <!-- <input class="form-control" [value]="a" (blur)="onChangeOfA($event)" /> -->
+
+        <!--using change and validating-->
+        <!--'change' does not fire if the value did not chanage -->
+        <input class="form-control" [value]="a" (change)="onValidateOfA($event)" />
     </div>
     <div>value of b :
         <!--creating template reference variable "second" to identify the element-->

@@ -25,9 +25,24 @@ export class AppComponent implements OnInit {
         this.s = this.a + this.b;
     }
 
-    onChangeOfA(e: any) {
-        //this.a = e.target.value; //string cannot be assigned to number
-        this.a = e.target.value * 1; //convert string to number        
+    // onChangeOfA(e: any) {
+    //     //this.a = e.target.value; //string cannot be assigned to number
+    //     this.a = e.target.value * 1; //convert string to number        
+    // }
+
+    onValidateOfA(e: any) {
+        let t = e.target.value * 1;
+        if (t < 10) {
+            let c = confirm("You are providing value less than 10.  Are you sure?");
+            if (c == false) {
+                t = this.a;
+            }
+        }
+        this.a = t;
+
+        //this is essential, 
+        //otherwise textbox does not reflect change, if 'a' has same value and not changed
+        e.target.value = t;
     }
 
     onChangeOfB(v: string) {
