@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     isItalic: boolean = true;
 
     stylesToApply: {};
+    classesToApply: {};
     constructor() { }
 
     ngOnInit() {
@@ -40,11 +41,18 @@ export class AppComponent implements OnInit {
     }
 
     setStyle() {
+        //for ngStyle
         this.stylesToApply = {
             'font-weight': this.isBold ? 'bold' : 'normal',
             'font-style': this.isItalic ? 'italic' : 'normal',
             'color': (this.sum > 100) ? 'red' : 'black'
-        }
+        };
+
+        //for ngClass
+        this.classesToApply = {
+            'bold-text': this.isBold,
+            'italic-text': this.isItalic,
+        };
     }
 
 }

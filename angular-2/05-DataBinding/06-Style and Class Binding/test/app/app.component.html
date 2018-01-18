@@ -34,7 +34,10 @@
         <!-- <span [style.color]="sum > 100 ? 'red' : 'black'" [class.bold-text]="isBold" [class.italic-text]="isItalic">{{sum}}</span> -->
 
         <!--using ngStyle-->
-        <span [ngStyle]="stylesToApply">{{sum}}</span>
+        <!-- <span [ngStyle]="stylesToApply">{{sum}}</span> -->
+
+        <!--using ngClass-->
+        <span [ngClass]="classesToApply">{{sum}}</span>
 
     </div>
 </div>
