@@ -1,0 +1,15 @@
+<div class="container">
+    <div>value of a :
+        <input class="form-control" [(ngModel)]="a" (keyup)="applyChanges()" />
+    </div>
+    <div>value of b :
+        <input class="form-control" [(ngModel)]="b" (keyup)="applyChanges()" />
+    </div>
+    <hr>
+    <div *ngIf="!a || !b">
+        Provide values for both 'a' and 'b'
+    </div>
+    <div *ngIf="a && b">
+        Sum ={{sum}}
+    </div>
+</div>
