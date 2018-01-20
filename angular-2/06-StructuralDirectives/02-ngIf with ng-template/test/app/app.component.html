@@ -1,0 +1,42 @@
+<div class="container">
+    <div>value of a :
+        <input class="form-control" [(ngModel)]="a" (keyup)="applyChanges()" />
+    </div>
+    <div>value of b :
+        <input class="form-control" [(ngModel)]="b" (keyup)="applyChanges()" />
+    </div>
+    <hr>
+
+    <!--** method 1 -->
+    <!--only shows when ngIf condition succeeds -->
+    <div *ngIf="!a || !b; else SumPanel">
+        Provide values for both 'a' and 'b'
+    </div>
+
+    <!--only shows when ngIf condition fails -->
+    <ng-template #SumPanel>
+        <div>
+            Sum ={{sum}}
+        </div>
+    </ng-template>
+
+    <!--** method 2 -->
+    <!--just a conditional statement (nothing will be shown) -->
+    <div *ngIf="!a || !b; then HelpPanel; else SumPanel">
+    </div>
+
+    <!--only shows when ngIf condition fails -->
+    <ng-template #HelpPanel>
+        <div>
+            Provide values for both 'a' and 'b'
+        </div>
+    </ng-template>
+
+    <!--only shows when ngIf condition fails -->
+    <ng-template #SumPanel>
+        <div>
+            Sum ={{sum}}
+        </div>
+    </ng-template>
+
+</div>

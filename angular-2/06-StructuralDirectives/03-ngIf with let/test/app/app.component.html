@@ -1,0 +1,21 @@
+<div class="container">
+
+    <!-- sets oEmp to o, if the condition passes -->
+    <div *ngIf="oEmp;let o;else NoEmp">
+        Empno: {{o.empno}}
+        <br> Ename: {{o.ename}}
+        <br> Sal: {{o.sal}}
+        <br> Deptno: {{o.deptno}}
+    </div>
+
+    <ng-template #NoEmp>
+        No Employee info found
+    </ng-template>
+
+    <hr>
+    <!-- sets oEmp.ename to name, if the condition passes -->
+    <div *ngIf="oEmp && oEmp.ename;let name; else NoEmp">
+        <br> Ename: {{name}}
+    </div>
+
+</div>

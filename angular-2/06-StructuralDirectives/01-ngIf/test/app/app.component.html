@@ -6,6 +6,16 @@
         <input class="form-control" [(ngModel)]="b" (keyup)="applyChanges()" />
     </div>
     <hr>
+
+    <!-- using template expression syntax -->
+    <ng-template [ngIf]="!a || !b">
+        <div>Provide values for both 'a' and 'b'</div>
+    </ng-template>
+    <ng-template [ngIf]="a && b">
+        Sum ={{sum}}
+    </ng-template>
+
+    <!-- using microsyntax (just a syntactic sugar)-->
     <div *ngIf="!a || !b">
         Provide values for both 'a' and 'b'
     </div>
