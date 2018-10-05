@@ -7,7 +7,9 @@ new Vue({
     App
   },
   template: "<App></App>",
-  data: {
-    msg: "Welcome to Your Vue.js App"
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App"
+    }
   },
 })

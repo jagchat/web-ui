@@ -1,6 +1,6 @@
 # app01
 
-> How to define components, data and template in Vue instance and access data from root component (using $parent)
+> How to define components, data function and template in Vue instance and access data from root component (using $parent)
 
 ## Build Setup
 
