@@ -1,9 +1,9 @@
 # app01
 
-> Loading from a REST service using vuex store and axios,
-> demonstrates "loading..",
-> demonstrates vuex getters, mutations, actions,
-> actions using axios
+> Demonstrates master-detail app using a REST service
+> demonstrates "loading.." using vuex store,
+> local component data (not using store),
+> REST service communication using axios,
 > styling using bootstrap/bootstrap-vue
 
 
