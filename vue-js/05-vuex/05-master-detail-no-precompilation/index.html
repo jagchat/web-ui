@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Page</title>
+    <script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="store/store.js"></script>
+    <script src="store/api.js"></script>
+    <script src="components/Header/Header.js"></script>
+    <script src="components/EmployeeList/EmployeeList.js"></script>
+    <script src="components/EmployeeDetail/EmployeeDetail.js"></script>
+    <script src="components/Root/Root.js"></script>
+    <script src="app/routes.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        var vapp = new app.Vue({
+            el: '#app',
+            router: app.router,
+            store: app.store,
+            template: '<Root></Root>',
+            data: {}
+        });
+    </script>
+</body>
+
+</html>
