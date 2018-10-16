@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Page</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <div id="app">
+        {{ message }}
+        <hello-component></hello-component>
+        <hello-async-component></hello-async-component>
+    </div>
+    <script>
+        var _Vue = Vue;
+
+        _Vue.component('hello-component', {
+            template: '<strong><br>hello</strong>'
+        })
+
+        _Vue.component('hello-async-component', function (resolve, reject) {
+            jQuery.get({
+                url: 'hello-async-component.html'
+            }).done(function (data) {
+                resolve({
+                    template: data
+                });
+            }).fail(function (xhr) {
+                console.error(xhr);
+            }).always(function () {});
+        });
+
+        var app = new _Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
+    </script>
+</body>
+
+</html>
