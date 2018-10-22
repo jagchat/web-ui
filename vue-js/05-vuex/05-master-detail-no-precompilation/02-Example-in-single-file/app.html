@@ -1,0 +1,71 @@
+<script type="text/x-template" id="header-template">
+    <div class="jumbotron">
+        <h1 class="display-4">Employee Maintenance Screen</h1>
+    </div>
+</script>
+
+<script type="text/x-template" id="emp-list-template">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto mr-auto">
+                <h3>List of Employees</h3>
+            </div>
+            <div class="col-auto">
+                <button @click="refresh" class="btn btn-primary">Refresh</button>
+            </div>
+        </div>
+        <div v-if="PENDING" class="alert alert-info" role="alert">Loading..</div>
+        <div v-if="!PENDING && !FAILURE && data != null ">
+            <table class="table">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Salary</th>
+                </thead>
+                <tbody>
+                    <tr v-for="(item) in data" :key="item.Empno">
+                        <th scope="row">
+                            <router-link :to="{name: 'EmpDetail', params: {empno:item.Empno}}">{{item.Empno}}</router-link>
+                        </th>
+                        <td>{{item.Ename}}</td>
+                        <td>{{item.Sal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="emp-detail-template">
+    <div class="container">
+        <div class="row">
+            <h2>Details of Employee: {{empno}}</h2>
+        </div>
+        <div v-if="PENDING" class="alert alert-info" role="alert">Loading..</div>
+        <div v-if="!PENDING && !FAILURE && data != null ">
+            <hr>
+            <div class="form-group row">
+                <label for="ename" class="col-sm-2 col-form-label caption">Name:</label>
+                <div class="col-sm-10">
+                    <label class="form-control-plaintext" id="ename">{{ data.Ename }}</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="sal" class="col-sm-2 col-form-label caption">Salary:</label>
+                <div class="col-sm-10">
+                    <label class="form-control-plaintext" id="sal">{{data.Sal}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <button @click="goBack">Back</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="root-template">
+    <div>
+        <Header></Header>
+        <router-view></router-view>
+    </div>
+</script>
