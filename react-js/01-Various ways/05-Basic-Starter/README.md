@@ -1,2 +1,5 @@
-# Basic React app with Webpack 4 / Babel 7 (not using create-react-app)
+# Basic React app with Webpack 4 / Babel 7 
+
+> - does not use "create-react-app"
+> - support HMR (live preview / Hot Module Replacement)
 
