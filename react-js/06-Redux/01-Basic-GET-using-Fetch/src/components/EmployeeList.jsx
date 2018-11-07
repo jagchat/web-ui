@@ -1,46 +1,19 @@
 import React, { Component } from 'react';
-
-const API = process.env.REACT_APP_API || 'http://localhost:8000/api';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as employeeActions from '../actions/employeeActions';
 
 class EmployeeList extends Component {
     constructor(...args) {
         super(...args);
-        this.state = {
-            loading: true,
-            data: []
-        }
-    }
-
-    componentDidMount() {
-        this.getEmployees();
-    }
-
-    async fetch(method, endpoint, body) {
-        try {
-            const response = await fetch(`${API}${endpoint}`, {
-                method,
-                body: body && JSON.stringify(body),
-                headers: {
-                    'content-type': 'application/json',
-                    accept: 'application/json'
-                },
-            });
-            return await response.json();
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    async getEmployees() {
-        this.setState({ loading: false, data: await this.fetch('get', '/Employees') });
     }
 
     render() {
 
         let renderEmpRowsList = () => {
             let empRowsList = [];
-            for (let i = 0; i < this.state.data.length; i++) {
-                let r = this.state.data[i];
+            for (let i = 0; i < this.props.employees.length; i++) {
+                let r = this.props.employees[i];
                 empRowsList.push(
                     <tr key={r.Empno}>
                         <th scope="row">
@@ -80,4 +53,17 @@ class EmployeeList extends Component {
     }
 }
 
-export default EmployeeList;
+function mapStateToProps(state, ownProps) {
+    return {
+        employees: state.employees
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(employeeActions, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeList);
+
